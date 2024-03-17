@@ -7,8 +7,9 @@ export function ApiStack({ stack }: StackContext) {
 
   const api = new Api(stack, "Api", {
     defaults: {
+      authorizer: "iam",
       function: {
-        bind: [table]
+        bind: [table],
       },
     },
     routes: {
